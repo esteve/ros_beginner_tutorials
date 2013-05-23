@@ -26,7 +26,7 @@ class AddTwoIntsHandler(object):
     response = a + b
     d = defer.Deferred()
     # Simulate a long-running computation
-    reactor.callLater(1.0, d.callback, response)
+    reactor.callLater(0.1, d.callback, response)
     return d
 
 handler = AddTwoInts.Processor(AddTwoIntsHandler())
